@@ -27,7 +27,8 @@ const NftList = ({ minterContract, marketContract, name }) => {
       if (!_apes) return;
       setApes(_apes);
     } catch (error) {
-      console.log({ error });
+      //console.log({ error });
+      toast(<NotificationError text="Failed to load assets." />);
     } finally {
       setLoading(false);
     }
@@ -40,7 +41,7 @@ const NftList = ({ minterContract, marketContract, name }) => {
       toast(<NotificationSuccess text="Updating Ape list...." />);
       getAssets();
     } catch (error) {
-      console.log({ error });
+      //console.log({ error });
       toast(<NotificationError text="Failed to create an Ape." />);
     } finally {
       setLoading(false);
@@ -60,7 +61,7 @@ const NftList = ({ minterContract, marketContract, name }) => {
       toast(<NotificationSuccess text="Updating Ape list...." />);
       getAssets();
     } catch (error) {
-      console.log({ error });
+      //console.log({ error });
       toast(<NotificationError text="Failed to create an Ape." />);
     } finally {
       setLoading(false);
@@ -80,7 +81,7 @@ const NftList = ({ minterContract, marketContract, name }) => {
         fetchContractOwner(minterContract);
       }
     } catch (error) {
-      console.log({ error });
+      //console.log({ error });
     }
   }, [minterContract, address, getAssets, fetchContractOwner]);
 
