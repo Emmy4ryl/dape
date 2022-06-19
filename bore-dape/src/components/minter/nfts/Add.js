@@ -60,7 +60,7 @@ const AddNfts = ({ save, address }) => {
         className="rounded-pill px-0"
         style={{ width: "38px" }}
       >
-        <i className="bi bi-plus"></i>
+        <i className="bi bi-plus"/>
       </Button>
 
       {/* Modal */}
@@ -116,18 +116,18 @@ const AddNfts = ({ save, address }) => {
             </FloatingLabel>
 
             <Form.Control
-              type="file"
-              className={"mb-3"}
-              onChange={async (e) => {
-                const imageUrl = await uploadToIpfs(e);
-                if (!imageUrl) {
-                  alert("failed to upload image");
-                  return;
-                }
-                setIpfsImage(imageUrl);
-              }}
-              placeholder="Product name"
-            ></Form.Control>
+    type="file"
+    className={"mb-3"}
+    onChange={async (e) => {
+        const imageUrl = await uploadToIpfs(e);
+        if (!imageUrl) {
+            alert("failed to upload image");
+            return;
+        }
+        setIpfsImage(imageUrl);
+    }}
+    placeholder="Product name"
+    />
             <Form.Label>
               <h5>Properties</h5>
             </Form.Label>
@@ -221,5 +221,5 @@ AddNfts.propTypes = {
     save: PropTypes.func.isRequired,
     address: PropTypes.string.isRequired,
   };
-  
+
   export default AddNfts;
