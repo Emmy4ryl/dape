@@ -90,4 +90,11 @@ contract ApeMarket {
     function unPauseMinting() public onlyOwner {
         paused = false;
     }
+
+    function blacklistAddress(address _address) public onlyOwner {
+        blacklist[_address] = true;
+    }
+    function unBlacklistAddress(address _address) public onlyOwner {
+        blacklist[_address] = false;
+    }
 }
